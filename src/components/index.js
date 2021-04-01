@@ -6,3 +6,4 @@ export { default as Login } from './login';
 export { default as Logout } from './logout';
 export { default as SignInSignOut } from './SignInSignOut';
 export { default as NotFound } from './notfound';
+export { default as AllUsers } from './allUsers';

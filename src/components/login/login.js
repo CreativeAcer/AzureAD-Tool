@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { useMsal } from "@azure/msal-react";
 
+import { msalInstance } from '../../index';
+
 /**
  * Styled Component import
  */
@@ -13,7 +15,10 @@ const Login = (props) => {
         return <span>Login is currently in progress!</span>
     } else {
         return (
-            <Button onClick={() => instance.loginPopup({})}>Login</Button>
+            <Button onClick={() => instance.loginPopup({}).then((result) => { 
+                if(result.account)
+                    msalInstance.setActiveAccount(result.account)
+            })}>Login</Button>
         );
     }
     

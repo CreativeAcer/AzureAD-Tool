@@ -11,7 +11,9 @@ import {
 import { Softcard } from '../../styledcomponents/card-styled';
 import { GridWrap } from '../../styledcomponents/gridWrap-styled';
 import { GridCentered } from '../../styledcomponents/gridCentered-styled';
-import { NotFound } from '..';
+import { NotFound } from '../index';
+
+import { AllUsers } from '../index';
 
 const Main = (props) => {
     return (
@@ -36,23 +38,7 @@ const Main = (props) => {
             </GridWrap>
           </Route>
           <Route path="/users">
-            {/* <Users /> */}
-            <GridWrap columns={"1fr 1fr 1fr 1fr"}>
-            <JsxWrapper>
-             <Softcard>USERS</Softcard>
-             <Softcard>Softcard</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-             <Softcard>Main</Softcard>
-            </JsxWrapper>
-            </GridWrap>
+            <AllUsers/>
           </Route>
           <Route exact path="/">
             {/* <Home /> */}
