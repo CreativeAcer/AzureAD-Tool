@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {
+  DetailsList
+} from '@fluentui/react';
 /**
  * MSAL
  */
 import { useMsal, useAccount } from "@azure/msal-react";
-import { callMsGraph } from "../../Services/graph-service";
+import { getADUsers } from "../../Services/graph-service";
 import { msalInstance } from '../../index';
 
 /**
@@ -17,9 +20,10 @@ const AllUsers = (props) => {
     const [employees, setEmployees] = useState([])
 
     useEffect(() => {
-        callMsGraph().then(response => {
-          // const employees = JSON.parse(response)
-          setEmployees(response)
+        getADUsers().then(response => {
+          debugger;
+          // const employees = JSON.parse(response.value);
+          setEmployees(response.value)
         })
       }, [])
     // useEffect(() => {
@@ -39,9 +43,10 @@ const AllUsers = (props) => {
         <div>
             {employees.map((data, key) => {
               return (
-                <tr key={key}>
-                  <td>{data}</td> // column data received
-                </tr>
+                <DetailsList items={data} />
+                // <tr key={key}>
+                //   <td>{data.displayName}</td> // column data received
+                // </tr>
               );
             })}
         </div>
