@@ -8,6 +8,7 @@ import {
 import { useMsal, useAccount } from "@azure/msal-react";
 import { getADUsers } from "../../Services/graph-service";
 import { msalInstance } from '../../index';
+import { GridCentered } from '../../styledcomponents/gridCentered-styled';
 
 /**
  * Styled Component import
@@ -15,8 +16,8 @@ import { msalInstance } from '../../index';
 
 
 const AllUsers = (props) => {
-    const { instance, accounts, inProgress } = useMsal();
-    const account = useAccount(accounts[0] || {});
+    // const { instance, accounts, inProgress } = useMsal();
+    // const account = useAccount(accounts[0] || {});
     const [employees, setEmployees] = useState([])
 
     useEffect(() => {
@@ -39,17 +40,22 @@ const AllUsers = (props) => {
     //     }
     // }, [account, instance]);
 
+    const _columns = [
+      { key: 'c1', name: 'Name', fieldName: 'displayName', minWidth: 100, maxWidth: 200, isResizable: true },
+      { key: 'c2', name: 'E-mail', fieldName: 'userPrincipalName', minWidth: 100, maxWidth: 200, isResizable: true },
+    ];
+
     return (
-        <div>
-            {employees.map((data, key) => {
-              return (
-                <DetailsList items={data} />
-                // <tr key={key}>
-                //   <td>{data.displayName}</td> // column data received
-                // </tr>
-              );
-            })}
-        </div>
+        <GridCentered>
+          <p>search</p>
+            {/* {employees.map((data, key) => { */}
+              {/* return ( */}
+                <DetailsList 
+                  items={employees} 
+                  columns={_columns}/>
+              {/* ); */}
+            {/* })} */}
+        </GridCentered>
     )    
 }
 

@@ -36,7 +36,7 @@ function App() {
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
           <GridCentered>
-            <TextReveal class="home-title">
+            <TextReveal className="home-title">
                 <span>To use the application,</span>
                 <span>please login.</span>
             </TextReveal>

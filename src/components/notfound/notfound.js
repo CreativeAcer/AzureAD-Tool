@@ -9,7 +9,7 @@ import JsxWrapper from '../../hoc/jsxwrapper/jsxwrapper';
 const NotFound = (props) => {
     return (
         <JsxWrapper>
-            <TextReveal class="home-title">
+            <TextReveal className="home-title">
                 <span>Page not found!</span>
                 <span>please try again.</span>
             </TextReveal>
