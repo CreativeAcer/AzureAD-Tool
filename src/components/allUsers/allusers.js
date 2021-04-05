@@ -47,7 +47,7 @@ const AllUsers = (props) => {
 
     return (
         <GridCentered>
-          <p>search</p>
+          <input type="text"></input>
             {/* {employees.map((data, key) => { */}
               {/* return ( */}
                 <DetailsList 

@@ -12,6 +12,10 @@ const ltrBefore = keyframes`
 export const TextReveal = styled.h1`
     font-size: 3em;
     font-weight: normal;
+    position: relative;
+    top: 30%;
+    left: 30%;
+    width: 40%;
 
     span {
         position: relative;

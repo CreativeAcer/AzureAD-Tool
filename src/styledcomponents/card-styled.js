@@ -1,7 +1,12 @@
 import styled  from 'styled-components';
 
 export const Softcard = styled.div`
-    background-color: ${props => props.bgColor || "#f1f3f6"};
+    // background-color: ${props => props.bgColor || "#f1f3f6"};
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255, 0.8),
+      rgba(255,255,255, 0.3)
+    );
     color: #c8c8c8;
     border-radius: .5em;
     border: 0.084em solid rgba(#fff, 0.3);
@@ -12,4 +17,5 @@ export const Softcard = styled.div`
     // height: ${props => props.cardheight || "150px"};
     text-align: center;
     padding: 1em 2em;
+    z-index: 3;
 `;
