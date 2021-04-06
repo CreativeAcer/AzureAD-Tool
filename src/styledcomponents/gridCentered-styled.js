@@ -4,6 +4,8 @@ export const GridCentered = styled.div`
     display: grid;
     align-content: center;
     text-align: center;
+    justify-items: center;
+    place-items: Center;
     grid-area: ${props => props.Gridarea || "main"};
     grid-template-columns: ${props => props.columns || "1fr"};
     grid-template-rows: auto; 

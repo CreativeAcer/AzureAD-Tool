@@ -30,7 +30,13 @@ export const TextReveal = styled.h1`
             right: 0;
             width: 100%;
             height: 100%;
-            background: white;
+            //background: white;
+            background: linear-gradient(
+                to right bottom,
+                rgba(13, 12, 29, 0.8),
+                rgba(13, 12, 29, 0.3)
+              );
+            backdrop-filter: blur(2px);
             animation: ${ltrAfter} 2s cubic-bezier(.77,0,.18,1) forwards;
             transform: translateX(-101%);
         }
@@ -42,23 +48,23 @@ export const TextReveal = styled.h1`
             right: 0;
             width: 100%;
             height: 100%;
-            background: var(--bg-color);
+            //background:  ${({ theme }) => theme.primaryLight};
             animation: ${ltrBefore} 2s cubic-bezier(.77,0,.18,1) forwards;
             transform: translateX(0);
         }
 
         :nth-of-type(1)::before{
-            animation-delay: 1s;
+            animation-delay: 0.5s;
         }
         :nth-of-type(1)::after{
-            animation-delay: 1s;
+            animation-delay: 0.5s;
         }
 
         :nth-of-type(2)::before{
-            animation-delay: 1.5s;
+            animation-delay: 1.0s;
         }
         :nth-of-type(2)::after{
-            animation-delay: 1.5s;
+            animation-delay: 1.0s;
         }
     }
 `;

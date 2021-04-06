@@ -9,6 +9,7 @@ import { useMsal, useAccount } from "@azure/msal-react";
 import { getADUsers } from "../../Services/graph-service";
 import { msalInstance } from '../../index';
 import { GridCentered } from '../../styledcomponents/gridCentered-styled';
+import { ListContainer } from '../../styledcomponents/listContainer-styled';
 
 /**
  * Styled Component import
@@ -18,15 +19,17 @@ import { GridCentered } from '../../styledcomponents/gridCentered-styled';
 const AllUsers = (props) => {
     // const { instance, accounts, inProgress } = useMsal();
     // const account = useAccount(accounts[0] || {});
-    const [employees, setEmployees] = useState([])
 
-    useEffect(() => {
-        getADUsers().then(response => {
-          debugger;
-          // const employees = JSON.parse(response.value);
-          setEmployees(response.value)
-        })
-      }, [])
+    // const [employees, setEmployees] = useState([])
+
+    // useEffect(() => {
+    //     getADUsers().then(response => {
+    //       debugger;
+    //       // const employees = JSON.parse(response.value);
+    //       setEmployees(response.value)
+    //     })
+    //   }, [])
+
     // useEffect(() => {
     //     if (account) {
     //         instance.acquireTokenSilent({
@@ -47,14 +50,22 @@ const AllUsers = (props) => {
 
     return (
         <GridCentered>
-          <input type="text"></input>
-            {/* {employees.map((data, key) => { */}
-              {/* return ( */}
+          {/* <input type="text"></input>
                 <DetailsList 
                   items={employees} 
-                  columns={_columns}/>
-              {/* ); */}
-            {/* })} */}
+                  columns={_columns}/> */}
+          <ListContainer>
+            <h1>All Users</h1>
+            <div className="list">
+              <img src="https://i.postimg.cc/mrPFzMXk/photo-1448131063153-f1e240f98a72.jpg" alt=""/>
+              <div className="wrapper">
+                <h3>Sprinkles Cupcakes </h3>
+                <p>Nutrition Facts</p>
+                <p>495 Cal</p>
+              </div>
+              <i></i>
+            </div>
+          </ListContainer>
         </GridCentered>
     )    
 }
